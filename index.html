@@ -2,8 +2,8 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Keep · 新媒体用户深度分析报告 | 运动洞察实验室</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Keep · 新媒体用户深度分析 | 运动科技全景报告</title>
     <!-- 字体与图标库 -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -18,63 +18,47 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #fefaf5;
-            color: #1e2a2f;
+            background: #fffaf5;
+            color: #1a2c2f;
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
 
-        /* 运动风格渐变与动态背景 */
-        .bg-motion {
+        /* 动态运动背景 */
+        .motion-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -2;
-            background: linear-gradient(145deg, #fff6ed 0%, #ffe8da 100%);
+            background: linear-gradient(125deg, #fff5ed 0%, #ffe6d5 100%);
         }
 
-        .bg-shapes {
+        .animated-lines {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
-            overflow: hidden;
+            opacity: 0.3;
+            background-image: repeating-linear-gradient(45deg, rgba(255, 100, 50, 0.08) 0px, rgba(255, 100, 50, 0.08) 2px, transparent 2px, transparent 8px);
+            pointer-events: none;
         }
 
-        .shape {
-            position: absolute;
-            background: rgba(255, 110, 64, 0.08);
-            border-radius: 50%;
-            filter: blur(70px);
-            animation: floatShape 18s infinite alternate ease-in-out;
-        }
-
-        .shape1 { width: 50vw; height: 50vw; top: -20vh; left: -10vw; background: #ff7e5e; }
-        .shape2 { width: 40vw; height: 40vw; bottom: -15vh; right: -5vw; background: #ffb347; animation-duration: 22s; }
-        .shape3 { width: 30vw; height: 30vw; top: 40%; left: 60%; background: #ff9168; animation-duration: 15s; opacity: 0.5; }
-
-        @keyframes floatShape {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(5%, 8%) scale(1.1); }
-        }
-
-        /* 通用容器 */
         .container {
-            max-width: 1280px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 2rem 1.5rem;
+            padding: 2rem 1.8rem;
             position: relative;
         }
 
         /* 动效元素 */
         .fade-up {
             opacity: 0;
-            transform: translateY(35px);
-            transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.7s ease;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.7s ease;
         }
 
         .fade-up.visible {
@@ -82,76 +66,75 @@
             transform: translateY(0);
         }
 
-        /* 卡片样式 */
+        /* 卡片 */
         .card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(2px);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(4px);
             border-radius: 2rem;
             box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.02);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 140, 90, 0.2);
+            transition: all 0.35s ease;
+            border: 1px solid rgba(255, 110, 64, 0.2);
         }
 
         .card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 30px 45px -15px rgba(255, 90, 30, 0.2);
-            border-color: rgba(255, 100, 50, 0.4);
+            box-shadow: 0 30px 45px -12px rgba(255, 80, 40, 0.25);
+            border-color: rgba(255, 110, 64, 0.5);
         }
 
-        /* 头部区域 */
+        /* 头部 */
         .hero {
             text-align: center;
             margin-bottom: 3rem;
-            padding: 1rem 0;
         }
 
         .hero-badge {
             display: inline-block;
             background: #ff5e3a;
             color: white;
-            padding: 0.3rem 1rem;
+            padding: 0.3rem 1.2rem;
             border-radius: 100px;
             font-size: 0.8rem;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 0.5px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 8px 14px -8px rgba(255, 94, 58, 0.4);
+            margin-bottom: 1.2rem;
+            box-shadow: 0 8px 16px -6px rgba(255, 94, 58, 0.35);
         }
 
         h1 {
             font-size: 3.2rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #ff5e3a, #ff9a4a);
+            background: linear-gradient(135deg, #ff5e3a, #ff914d);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.8rem;
             letter-spacing: -0.02em;
         }
 
         .subhead {
             font-size: 1.2rem;
             color: #4a5b62;
-            max-width: 650px;
+            max-width: 720px;
             margin: 0 auto;
         }
 
-        /* 指标卡片组 */
+        /* 指标卡片 */
         .stats-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 1.8rem;
-            margin: 2.5rem 0 3rem;
+            margin: 2rem 0 2.5rem;
         }
 
         .stat-card {
             background: white;
-            border-radius: 2rem;
-            padding: 1.4rem 2rem;
+            border-radius: 1.8rem;
+            padding: 1.2rem 2rem;
             min-width: 170px;
             text-align: center;
-            box-shadow: 0 12px 25px -12px rgba(0,0,0,0.1);
+            box-shadow: 0 12px 20px -10px rgba(0,0,0,0.05);
             border-bottom: 4px solid #ff7a45;
         }
 
@@ -159,25 +142,22 @@
             font-size: 2.5rem;
             font-weight: 800;
             color: #ff5e3a;
-            line-height: 1;
         }
 
         .stat-label {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
             font-weight: 600;
             color: #5b6f78;
             margin-top: 0.5rem;
         }
 
-        /* 成员报告区域 - 三列 */
+        /* 成员区域 */
         .team-section {
-            margin: 4rem 0;
+            margin: 3.5rem 0;
         }
-
         .section-title {
-            font-size: 2rem;
+            font-size: 1.9rem;
             font-weight: 700;
             margin-bottom: 2rem;
             position: relative;
@@ -188,7 +168,7 @@
             position: absolute;
             bottom: -10px;
             left: 0;
-            width: 60px;
+            width: 70px;
             height: 4px;
             background: #ff7a45;
             border-radius: 4px;
@@ -199,14 +179,12 @@
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
-
         .member-card {
             padding: 1.8rem;
             height: 100%;
             display: flex;
             flex-direction: column;
         }
-
         .member-avatar {
             font-size: 2.5rem;
             background: #fff1e8;
@@ -215,82 +193,79 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 2rem;
-            margin-bottom: 1.2rem;
+            border-radius: 1.8rem;
+            margin-bottom: 1rem;
             color: #ff5e3a;
         }
-
         .member-name {
             font-size: 1.6rem;
             font-weight: 700;
-            margin-bottom: 0.25rem;
         }
         .member-role {
-            font-size: 0.8rem;
-            font-weight: 500;
+            font-size: 0.75rem;
+            font-weight: 600;
             color: #ff7a45;
             text-transform: uppercase;
-            margin-bottom: 1.2rem;
-            letter-spacing: 1px;
+            margin-bottom: 1rem;
         }
-
         .insight-list {
             list-style: none;
             margin: 1rem 0;
         }
         .insight-list li {
             margin-bottom: 0.8rem;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             display: flex;
-            align-items: baseline;
             gap: 10px;
         }
         .insight-list i {
             color: #ff7a45;
-            font-size: 0.8rem;
             margin-top: 0.2rem;
         }
-
         .tag {
             background: #f0eae4;
-            padding: 0.2rem 0.7rem;
+            padding: 0.2rem 0.8rem;
             border-radius: 30px;
             font-size: 0.7rem;
             font-weight: 600;
             display: inline-block;
-            margin-right: 0.5rem;
-            margin-top: 0.5rem;
+            margin: 0.3rem 0.3rem 0 0;
         }
 
-        /* 多维度综合分析 */
-        .dimension-grid {
+        /* 综合分析网格 */
+        .insight-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
             gap: 1.8rem;
-            margin: 2rem 0 3rem;
+            margin: 2rem 0;
         }
-
-        .dim-card {
+        .insight-card {
             padding: 1.5rem;
-            transition: all 0.25s;
         }
-        .dim-icon {
+        .insight-icon {
             font-size: 2rem;
             margin-bottom: 1rem;
         }
-        .dim-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
+
+        /* 竞品表格样式 */
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255,255,240,0.6);
+            border-radius: 1.5rem;
+            overflow: hidden;
         }
-        .dim-text {
-            font-size: 0.9rem;
-            color: #2c3e41;
-            line-height: 1.5;
+        .comp-table th, .comp-table td {
+            padding: 0.9rem;
+            text-align: left;
+            border-bottom: 1px solid #ffdecb;
+        }
+        .comp-table th {
+            background: #ffede3;
+            font-weight: 700;
         }
 
-        /* 图表区域双栏 */
-        .charts-row {
+        .chart-row {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
@@ -298,23 +273,21 @@
         }
         .chart-box {
             flex: 1;
-            min-width: 250px;
+            min-width: 260px;
             background: white;
-            border-radius: 1.8rem;
+            border-radius: 1.5rem;
             padding: 1.2rem;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
-            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
         }
 
         canvas {
-            max-height: 280px;
+            max-height: 260px;
             width: 100%;
         }
 
-        /* 脚注 */
         footer {
             text-align: center;
-            margin-top: 5rem;
+            margin-top: 4rem;
             padding: 2rem 0;
             border-top: 1px solid rgba(0,0,0,0.05);
             font-size: 0.8rem;
@@ -324,155 +297,206 @@
         @media (max-width: 700px) {
             h1 { font-size: 2.2rem; }
             .container { padding: 1rem; }
-            .stat-card { padding: 1rem 1.2rem; min-width: 130px; }
         }
-
-        button, a { transition: all 0.2s; }
-        .btn-outline {
-            border: 1px solid #ff7a45;
-            background: transparent;
-            padding: 0.5rem 1.2rem;
-            border-radius: 40px;
-            font-weight: 600;
+        .badge-orange {
+            background: #ffede3;
             color: #ff5e3a;
-            cursor: default;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
-<div class="bg-motion"></div>
-<div class="bg-shapes">
-    <div class="shape shape1"></div>
-    <div class="shape shape2"></div>
-    <div class="shape shape3"></div>
-</div>
+<div class="motion-bg"></div>
+<div class="animated-lines"></div>
 
 <div class="container">
-    <!-- Hero 运动风格头部 -->
+    <!-- Hero区域 -->
     <div class="hero fade-up">
-        <div class="hero-badge"><i class="fas fa-heartbeat"></i> 运动洞察 · 新媒体用户分析</div>
-        <h1>Keep · 用户行为全息报告</h1>
-        <p class="subhead">基于30天沉浸式观察 · 深度解构运动社交生态<br>小组三维视角交叉验证，洞见用户心智与增长引擎</p>
+        <div class="hero-badge"><i class="fas fa-chart-line"></i> 新媒体用户分析 · Keep深度洞察</div>
+        <h1>KEEP · 从“自律”到“生态”<br>用户全周期运营革命</h1>
+        <p class="subhead">30天沉浸式观察 · 15,200+用户行为样本 | 小组三维交叉验证 | 运动科技平台的多维拆解</p>
     </div>
 
-    <!-- 关键数据指标卡片 -->
+    <!-- 关键数据卡片 -->
     <div class="stats-grid fade-up">
-        <div class="stat-card"><div class="stat-number" id="daysCount">30</div><div class="stat-label">📅 观察天数</div></div>
-        <div class="stat-card"><div class="stat-number" id="dataCount">12.5K</div><div class="stat-label">📊 分析数据量 (用户行为事件)</div></div>
-        <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">👥 分析小组成员</div></div>
+        <div class="stat-card"><div class="stat-number" id="daysCount">30</div><div class="stat-label">📆 观察天数</div></div>
+        <div class="stat-card"><div class="stat-number" id="dataCount">15.2K</div><div class="stat-label">📊 分析数据量 (行为事件)</div></div>
+        <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">👥 分析小组</div></div>
         <div class="stat-card"><div class="stat-number">Keep</div><div class="stat-label">🏆 观察平台</div></div>
     </div>
 
-    <!-- 三名成员个人观察报告区域 -->
+    <!-- 三成员个人报告 -->
     <div class="team-section fade-up">
-        <div class="section-title">📋 小组个人深度报告</div>
+        <div class="section-title">📌 三人行 · 个人观察报告</div>
         <div class="member-grid">
-            <!-- 成员A 王砚秋 - 用户活跃度与参与周期 -->
-            <div class="member-card card">
-                <div class="member-avatar"><i class="fas fa-chart-line"></i></div>
-                <div class="member-name">王砚秋</div>
-                <div class="member-role">行为分析师 · 活跃周期洞察</div>
-                <p style="margin-bottom: 1rem; font-weight: 500;">📌 观察侧重点：用户登录频率、运动时段偏好、训练完成率</p>
-                <ul class="insight-list">
-                    <li><i class="fas fa-calendar-week"></i> <strong>周活跃峰值</strong>：周二/周四晚间19-21点，周末活跃度下降18%</li>
-                    <li><i class="fas fa-stopwatch"></i> <strong>人均单次时长</strong>：27.3分钟，HIIT/燃脂课程粘性最高</li>
-                    <li><i class="fas fa-chart-simple"></i> <strong>新用户首周留存</strong>：约42%，连续打卡奖励机制提升至58%</li>
-                    <li><i class="fas fa-dumbbell"></i> 观察发现“帕梅拉”系列课程带动夜间训练高峰，周末早间冥想课异军突起。</li>
-                </ul>
-                <div><span class="tag">#活跃周期</span><span class="tag">#行为动线</span><span class="tag">#时段聚类</span></div>
-                <div class="btn-outline" style="margin-top: 1rem; align-self: flex-start;"><i class="far fa-file-alt"></i> 个人完整报告摘要：运动时段分布呈现双峰曲线，需强化周末轻量社交挑战</div>
-            </div>
-            <!-- 成员B 林知夏 - 社区互动与UGC内容 -->
-            <div class="member-card card">
-                <div class="member-avatar"><i class="fas fa-comments"></i></div>
-                <div class="member-name">林知夏</div>
-                <div class="member-role">社区生态专家 · UGC与互动分析</div>
-                <p style="margin-bottom: 1rem; font-weight: 500;">📌 关注维度：动态发布、点赞评论链、话题挑战参与率</p>
-                <ul class="insight-list">
-                    <li><i class="fas fa-hashtag"></i> <strong>热门话题</strong>：#居家健身打卡# 、#跑向夏天# 互动量提升210%</li>
-                    <li><i class="fas fa-heart"></i> <strong>情感倾向</strong>：正面评论占比87.3%，用户激励氛围极强</li>
-                    <li><i class="fas fa-chart-line"></i> <strong>内容发布频次</strong>：核心KOC周均发布3.2条动态，带动粉丝转化</li>
-                    <li><i class="fas fa-users"></i> 小组发现：用户评论关键词“陪伴感”“监督”高频出现，社交粘性反哺训练留存。</li>
-                </ul>
-                <div><span class="tag">#社群粘性</span><span class="tag">#UGC情感</span><span class="tag">#挑战赛引擎</span></div>
-                <div class="btn-outline" style="margin-top: 1rem;"><i class="far fa-file-alt"></i> 个人洞察：社群氛围是Keep第二增长曲线，打卡挑战提升周活15%</div>
-            </div>
-            <!-- 成员C 陆远帆 - 用户留存与流失因素 -->
+            <!-- 陈亭伊 - 商业化+分层运营 -->
             <div class="member-card card">
                 <div class="member-avatar"><i class="fas fa-chart-pie"></i></div>
-                <div class="member-name">陆远帆</div>
-                <div class="member-role">流失分析师 · 生命周期管理</div>
-                <p style="margin-bottom: 1rem; font-weight: 500;">📌 分析维度：卸载归因、沉默唤醒、会员转化漏斗</p>
+                <div class="member-name">陈亭伊</div>
+                <div class="member-role">商业化策略 · 分层运营专家</div>
+                <p style="margin-bottom: 0.8rem; font-weight: 500;">🔍 聚焦：用户分层模型 & 商业化变现效率</p>
                 <ul class="insight-list">
-                    <li><i class="fas fa-exclamation-triangle"></i> <strong>流失主因</strong>：课程同质化(42%)  / 缺乏个性化计划(33%)</li>
-                    <li><i class="fas fa-chart-line"></i> <strong>次留vs 7留</strong>：新用户次日留存39.5% → 第7日留存23.1%</li>
-                    <li><i class="fas fa-bell"></i> <strong>唤醒策略效果</strong>：Push激励(挑战赛提醒)唤醒率提升26%</li>
-                    <li><i class="fas fa-lightbulb"></i> 优化建议：引入AI动态计划及社交PK机制，预计提升留存12%。</li>
+                    <li><i class="fas fa-layer-group"></i> <strong>RFM分层实效</strong>：高价值用户(LTV>¥1000)占比12%，贡献58%订阅收入。</li>
+                    <li><i class="fas fa-chart-line"></i> <strong>分层转化对比</strong>：潜在付费用户通过“免费试看+满减券”转化率从15%→26%。</li>
+                    <li><i class="fas fa-shopping-cart"></i> <strong>电商爆品</strong>：动感单车年销50万台，硬件用户续费率超70%。</li>
+                    <li><i class="fas fa-brain"></i> 核心洞察：免费用户是流量池根基，精细化标签体系让“羊毛党”变付费狂。</li>
                 </ul>
-                <div><span class="tag">#流失预警</span><span class="tag">#个性化缺口</span><span class="tag">#会员价值</span></div>
-                <div class="btn-outline" style="margin-top: 1rem;"><i class="far fa-file-alt"></i> 个人结论：构建激励阶梯+内容多样性，可降低季度流失率至18%以下</div>
+                <div><span class="tag">#RFM模型</span><span class="tag">#转化率跃升</span><span class="tag">#LTV提升</span></div>
+            </div>
+            <!-- 文宣懿 - 社区生态+成长激励 -->
+            <div class="member-card card">
+                <div class="member-avatar"><i class="fas fa-users"></i></div>
+                <div class="member-name">文宣懿</div>
+                <div class="member-role">社区生态 · 激励体系专家</div>
+                <p style="margin-bottom: 0.8rem; font-weight: 500;">🔥 重点：用户成长激励 & 社区粘性</p>
+                <ul class="insight-list">
+                    <li><i class="fas fa-trophy"></i> <strong>徽章成就体系</strong>：完成挑战用户次月留存提高32%。</li>
+                    <li><i class="fas fa-comment-dots"></i> <strong>社区Tab互动率</strong>：KOC内容带动圈子用户周活跃提升41%。</li>
+                    <li><i class="fas fa-calendar-check"></i> <strong>计划Tab变现</strong>：会员定制计划续费率71%，饮食指导拉动附加消费。</li>
+                    <li><i class="fas fa-chart-simple"></i> 发现：签到+任务奖励使免费用户次日留存达45%，社交激励是关键。</li>
+                </ul>
+                <div><span class="tag">#徽章经济</span><span class="tag">#社区裂变</span><span class="tag">#会员粘性</span></div>
+            </div>
+            <!-- 张文腾 - AI机遇+竞品对比 -->
+            <div class="member-card card">
+                <div class="member-avatar"><i class="fas fa-robot"></i></div>
+                <div class="member-name">张文腾</div>
+                <div class="member-role">AI洞察 · 竞品战略分析师</div>
+                <p style="margin-bottom: 0.8rem; font-weight: 500;">⚡ 侧重：AI私教/VR机遇 & 竞品差异化</p>
+                <ul class="insight-list">
+                    <li><i class="fas fa-vr-cardboard"></i> <strong>VR健身课潜力</strong>：沉浸式游戏化可提升用户时长+35%。</li>
+                    <li><i class="fas fa-person-walking-arrow-right"></i> <strong>AI私教价值</strong>：实时动作纠错降低受伤风险，测试期课程完成率提高27%。</li>
+                    <li><i class="fas fa-chart-line"></i> <strong>竞品雷达对比</strong>：Keep在内容生态&硬件联动领先，悦跑圈侧重跑者。</li>
+                    <li><i class="fas fa-microchip"></i> 前瞻：智能硬件数据反哺AI计划，形成运动健康闭环。</li>
+                </ul>
+                <div><span class="tag">#AI教练</span><span class="tag">#VR健身</span><span class="tag">#竞品壁垒</span></div>
             </div>
         </div>
     </div>
 
-    <!-- 综合多维度分析 - 核心洞察区域 -->
+    <!-- 多维度综合分析 -->
     <div class="fade-up">
-        <div class="section-title">🔍 三维交叉 · 多维度用户全像分析</div>
-        <p style="margin-bottom: 1rem; color: #3d5a64;">结合三位成员报告 + 整体数据透视，得出以下关键维度结论</p>
+        <div class="section-title">🏅 多维交叉 · 全视角用户分析</div>
     </div>
 
-    <!-- 多维度卡片网格 -->
-    <div class="dimension-grid fade-up">
-        <div class="dim-card card"><div class="dim-icon">🧑‍🤝‍🧑</div><div class="dim-title">用户画像</div><div class="dim-text">18-30岁占67%，女性用户占比58%，一线/新一线城市渗透率最高。Z世代追求“晒练”社交认同，银发族偏爱低冲击课程。</div></div>
-        <div class="dim-card card"><div class="dim-icon">⏱️</div><div class="dim-title">行为习惯</div><div class="dim-text">黄金时段19-21点，碎片化训练趋势明显(单次≤20min增涨34%)。周末“躺平”倾向需唤醒，晨练人群付费意愿更高。</div></div>
-        <div class="dim-card card"><div class="dim-icon">🔥</div><div class="dim-title">内容消费偏好</div><div class="dim-text">燃脂/力量训练/瑜伽位列TOP3，跟练+直播组合留存优于纯录播。用户偏爱15分钟内高效课程，明星教练IP效应显著。</div></div>
-        <div class="dim-card card"><div class="dim-icon">💬</div><div class="dim-title">社区互动生态</div><div class="dim-text">每周活跃用户中62%参与至少一次互动(点赞/评论/挑战)，挑战赛分享率高达41%。正向社群氛围降低流失风险18%。</div></div>
-        <div class="dim-card card"><div class="dim-icon">📈</div><div class="dim-title">用户生命周期</div><div class="dim-text">新手期(0-14天)核心破冰关键；成熟期用户月均训练12.5次，高价值会员ARPU值约¥35/月。流失用户集中在45天无训练。</div></div>
-        <div class="dim-card card"><div class="dim-icon">🎯</div><div class="dim-title">增长机会点</div><div class="dim-text">个性化训练食谱联动、AI形体分析解锁新玩法；强化“好友赛马”轻竞技机制，预计提升周活跃20%。</div></div>
+    <!-- 孵化背景 & 产品定位 -->
+    <div class="insight-grid fade-up">
+        <div class="insight-card card"><div class="insight-icon">🥊</div><div class="insight-icon" style="font-size:1.3rem; font-weight:700;">孵化背景</div><div class="dim-text" style="margin-top:0.8rem;">2015年健康焦虑爆发，国民体质达标率仅89.6%，一线城市亚健康超75%。Keep以「免费课程+居家训练」切入，解决健身房高成本痛点；技术基建成熟（智能手机普及率>70%，传感器精度提升），顺势崛起。</div></div>
+        <div class="insight-card card"><div class="insight-icon">🎯</div><div class="insight-icon" style="font-size:1.3rem; font-weight:700;">产品定位 & Slogan变迁</div><div class="dim-text" style="margin-top:0.8rem;">一站式运动科技生活方式平台。「自律给我自由」→「运动就是坚持」→「这都算Keep」，门槛逐步降低，运动大众化。通过智能硬件+AI课程+社区生态，覆盖小白到硬核全周期。</div></div>
+        <div class="insight-card card"><div class="insight-icon">👥</div><div class="insight-icon" style="font-size:1.3rem; font-weight:700;">目标用户画像</div><div class="dim-text" style="margin-top:0.8rem;">在校学生、青年上班族、银发族；场景：宿舍/户外/办公室/家庭。一二线城市渗透率67%，女性占比58%。学生/上班族存在中断风险，小白用户需要专业指导。</div></div>
     </div>
 
-    <!-- 可视化图表区域 - 运动风格数据支持 -->
-    <div class="fade-up">
-        <div class="section-title">📊 关键指标可视化 · 数据佐证</div>
-        <div class="charts-row">
-            <div class="chart-box">
-                <h4 style="margin-bottom: 0.8rem;"><i class="fas fa-chart-line"></i> 一周活跃趋势 (基于30天抽样)</h4>
-                <canvas id="weeklyActiveChart" width="400" height="250" style="max-width:100%; height:auto"></canvas>
+    <!-- 竞品分析矩阵 与 商业模式-->
+    <div class="fade-up" style="margin: 1rem 0 2rem;">
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+            <div style="flex:1.2; min-width: 260px;" class="card" style="padding:1.5rem;">
+                <h3><i class="fas fa-chart-simple"></i> 竞品对比 · Keep VS 主要玩家</h3>
+                <table class="comp-table" style="margin-top:1rem;">
+                    <thead><tr><th>维度</th><th>Keep</th><th>悦动圈</th><th>小米运动</th></tr></thead>
+                    <tbody>
+                        <tr><td>核心优势</td><td>课程生态+社区+硬件闭环</td><td>计步+红包激励</td><td>智能穿戴联动</td></tr>
+                        <tr><td>用户粘性</td><td>高 (月活超3000万)</td><td>中 (红包依赖性)</td><td>中 (硬件绑定)</td></tr>
+                        <tr><td>AI智能化</td><td>AI私教/个性化计划</td><td>基础数据记录</td><td>心率分析</td></tr>
+                        <tr><td>商业化成熟度</td><td>会员+电商+广告多元</td><td>广告为主</td><td>硬件销售为主</td></tr>
+                    </tbody>
+                </table>
+                <p style="margin-top:1rem; font-size:0.85rem;">💡 结论：Keep内容社区+数据智能双壁垒，构建难以复制的运动生态。</p>
             </div>
-            <div class="chart-box">
-                <h4 style="margin-bottom: 0.8rem;"><i class="fas fa-chart-pie"></i> 用户年龄分布</h4>
-                <canvas id="agePieChart" width="400" height="250" style="max-width:100%; height:auto"></canvas>
-            </div>
-            <div class="chart-box">
-                <h4 style="margin-bottom: 0.8rem;"><i class="fas fa-chart-simple"></i> 用户运动偏好Top5</h4>
-                <canvas id="prefBarChart" width="400" height="250" style="max-width:100%; height:auto"></canvas>
+            <div style="flex:0.9;" class="card" style="padding:1.5rem;">
+                <h3><i class="fas fa-dollar-sign"></i> 商业化模式</h3>
+                <ul style="margin-top:1rem; list-style: none;">
+                    <li>✅ <strong>电商硬件</strong>：动感单车年销50万台，跑步机/手环联动</li>
+                    <li>✅ <strong>会员订阅</strong>：定制增肌/减脂计划，续费率超70%</li>
+                    <li>✅ <strong>广告生态</strong>：健身餐配送、运动服饰植入课程，品牌合作增量</li>
+                    <li>✅ <strong>虚拟服务</strong>：付费训练计划、直播课打赏</li>
+                </ul>
+                <div class="badge-orange" style="margin-top:1rem;">2024年线上收入占比超45%</div>
             </div>
         </div>
     </div>
 
-    <!-- 整体结论及战略建议 + 小组联合声明 -->
-    <div class="card fade-up" style="padding: 2rem; margin: 2rem 0; background: linear-gradient(115deg, #ffffff 0%, #fff7f0 100%);">
-        <div style="display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap; justify-content: space-between;">
-            <div><i class="fas fa-users" style="font-size: 2rem; color: #ff5e3a;"></i></div>
-            <div><h3 style="font-weight: 700;">🏁 小组联合观察结论 · 策略建议</h3></div>
+    <!-- 用户分层精细化运营模型（核心） -->
+    <div class="card fade-up" style="padding:1.8rem; margin: 2rem 0;">
+        <h3><i class="fas fa-chart-line"></i> 🔥 Keep用户分层爆单秘籍 · 数据驱动的精细化运营</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem;">
+            <div style="flex:1; min-width: 200px;"><i class="fas fa-tags"></i> <strong>三层标签体系</strong><br>基础标签(性别/年龄/目标) + 行为标签(频次/课程偏好/硬件) + 价值标签(付费力/流失风险)</div>
+            <div style="flex:1; min-width: 200px;"><i class="fas fa-users-viewfinder"></i> <strong>四类人群打法</strong><br>高价值付费用户→AI私教+硬件折扣；潜在付费→免费试看+场景推荐；活跃免费→签到+成就；流失→召回短信+回归礼包</div>
+            <div style="flex:1; min-width: 200px;"><i class="fas fa-chart-line"></i> <strong>效果闭环</strong><br>实时监测12项指标，A/B测试迭代：满50减10元比8折转化率高6%</div>
         </div>
-        <div style="margin-top: 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.2rem;">
-            <div><i class="fas fa-chart-line" style="color:#ff7a45"></i> <strong>短期策略</strong><br>强化周末挑战赛+晚间直播陪伴，利用社群裂变提升周末活跃度15%</div>
-            <div><i class="fas fa-crown" style="color:#ff7a45"></i> <strong>中期规划</strong><br>引入UGC课程共创，AI个性化周报推送，唤醒潜在流失用户</div>
-            <div><i class="fas fa-chart-simple" style="color:#ff7a45"></i> <strong>数据闭环</strong><br>搭建用户健康积分体系，打通运动与社交货币，提高用户全生命周期LTV</div>
+        <!-- 转化对比图 -->
+        <div style="margin-top: 1.8rem;">
+            <p><strong>📈 分层运营后转化率跃升（抽样数据）</strong></p>
+            <canvas id="conversionChart" width="400" height="180" style="max-width:100%; height:180px; margin-top:0.5rem;"></canvas>
         </div>
-        <hr style="margin: 1.2rem 0; border: 0; height: 1px; background: linear-gradient(90deg, #ffccaa, transparent);">
-        <p style="font-size: 0.85rem; text-align: center; color: #4b6e7a;">基于30天连续观察，采集分析12,500+条用户行为记录、2,300份社区互动样本。三维成员交叉验证，保证数据可信度及运动社区独特洞见。</p>
+    </div>
+
+    <!-- 用户成长激励体系 + 四大Tab拆解 -->
+    <div class="insight-grid fade-up">
+        <div class="insight-card card">
+            <div class="insight-icon">🏠</div>
+            <h3>首页TAB · 智能化推荐</h3>
+            <p>基于注册信息&运动历史，个性化推荐课程/达人内容，承担新用户吸引与留存，动态调整训练模块。</p>
+        </div>
+        <div class="insight-card card">
+            <div class="insight-icon">💬</div>
+            <h3>社区TAB · 社交激励</h3>
+            <p>KOL/KOC内容、精选动态、圈子社群。跑步圈互相激励，用户日均互动超120万次，形成情感归属。</p>
+        </div>
+        <div class="insight-card card">
+            <div class="insight-icon">📅</div>
+            <h3>计划TAB · 会员转化</h3>
+            <p>健身计划+饮食计划+卡路里计算，引导会员订阅及付费课程，为核心变现场景，续费率超70%。</p>
+        </div>
+        <div class="insight-card card">
+            <div class="insight-icon">🏅</div>
+            <h3>徽章成就体系</h3>
+            <p>连续打卡、挑战勋章、等级成长，强化用户成就感，徽章收集者周活跃比普通用户高2.1倍。</p>
+        </div>
+    </div>
+
+    <!-- 未来机遇 + AI私教/VR -->
+    <div class="fade-up" style="background: linear-gradient(100deg, #fff3ea, #ffffff); border-radius: 2rem; padding: 1.8rem; margin: 2rem 0;">
+        <h3><i class="fas fa-rocket"></i> 未来机遇 · AI私教 & VR健身革命</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 1rem;">
+            <div style="flex:1;"><i class="fas fa-eye"></i> <strong>AI私教实时纠错</strong><br>缺乏动作指导易导致受伤，AI动作识别+语音提示能提升课程完成率27%，降低用户挫败感，极大增强粘性。</div>
+            <div style="flex:1;"><i class="fas fa-vr-cardboard"></i> <strong>VR健身课 · 重构动机</strong><br>沉浸式游戏化体验（拳击/跳舞），相比小度健身屏，VR使运动时长提升35%，将娱乐与健身融合。</div>
+            <div style="flex:1;"><i class="fas fa-microchip"></i> <strong>硬件数据联动</strong><br>手环/动感单车数据反哺AI计划，形成“测量-训练-反馈”闭环，构建个人健康数字孪生。</div>
+        </div>
+    </div>
+
+    <!-- 数据可视化区域：活跃趋势 & 生命周期策略 -->
+    <div class="chart-row fade-up">
+        <div class="chart-box"><h4><i class="fas fa-chart-line"></i> 一周活跃指数 (抽样)</h4><canvas id="weeklyActiveChart" height="180"></canvas></div>
+        <div class="chart-box"><h4><i class="fas fa-chart-pie"></i> 用户场景分布</h4><canvas id="scenePieChart" height="180"></canvas></div>
+        <div class="chart-box"><h4><i class="fas fa-chart-simple"></i> 用户生命周期策略映射</h4><canvas id="lifecycleChart" height="180"></canvas></div>
+    </div>
+
+    <!-- 小组联合结论 -->
+    <div class="card fade-up" style="padding: 1.8rem; margin: 2rem 0; background: linear-gradient(115deg, #fffaf2, #fff5ea);">
+        <div style="display: flex; gap: 1rem; align-items: center;">
+            <i class="fas fa-handshake" style="font-size: 2.2rem; color:#ff5e3a;"></i>
+            <h3 style="font-weight: 800;">🏁 小组联合结论 · 战略建议</h3>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap:1.2rem; margin-top:1rem;">
+            <div><i class="fas fa-chart-line"></i> <strong>短期爆发</strong><br>深化分层运营A/B测试，强化周末挑战赛+社交裂变，提升免费用户转化率至22%</div>
+            <div><i class="fas fa-robot"></i> <strong>中期壁垒</strong><br>全面落地AI私教与VR课程测试，打造差异化硬核科技体验，提高用户留存时长</div>
+            <div><i class="fas fa-chart-simple"></i> <strong>长期生态</strong><br>构建运动健康数据银行，联动饮食/睡眠，从“工具”进化为生活方式基础设施</div>
+        </div>
+        <hr style="margin: 1.2rem 0;">
+        <p style="text-align: center; font-size: 0.85rem;">基于30天连续观察，分析15,200+用户行为数据、2,800条社区样本，三人独立交叉验证。Keep凭借「数据+内容+硬件」铁三角，持续定义运动科技新边界。</p>
     </div>
 
     <footer>
-        <i class="fas fa-dumbbell"></i> Keep 新媒体用户分析报告 · 运动行为实验室 <br>
-        小组成员：王砚秋 / 林知夏 / 陆远帆 | 数据观察周期：2025.03.01 - 2025.03.30
+        <i class="fas fa-dumbbell"></i> Keep 新媒体用户分析报告 · 运动科技实验室 <br>
+        小组成员：陈亭伊 ｜ 文宣懿 ｜ 张文腾 | 数据周期：2025.03.01 - 2025.03.30 | 观察平台：Keep APP
     </footer>
 </div>
 
 <script>
-    // 滚动动画 Intersection Observer
+    // 滚动动画
     const fadeElements = document.querySelectorAll('.fade-up');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -481,13 +505,12 @@
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+    }, { threshold: 0.1, rootMargin: "0px 0px -30px 0px" });
     fadeElements.forEach(el => observer.observe(el));
 
-    // 统计数据动态数字滚动 (简易)
+    // 数字动态
     const daysSpan = document.getElementById('daysCount');
     const dataSpan = document.getElementById('dataCount');
-    let days = 30, dataVal = 12500;
     let daysCurrent = 0, dataCurrent = 0;
     const animateNumber = (element, target, suffix = '', isK = false) => {
         let start = 0;
@@ -496,7 +519,7 @@
             start += step;
             if (start >= target) {
                 if (isK) element.innerText = (target / 1000).toFixed(1) + 'K';
-                else element.innerText = Math.floor(target);
+                else element.innerText = target;
                 clearInterval(timer);
             } else {
                 if (isK) element.innerText = (start / 1000).toFixed(1) + 'K';
@@ -506,80 +529,53 @@
     };
     setTimeout(() => {
         animateNumber(daysSpan, 30, '', false);
-        animateNumber(dataSpan, 12500, '', true);
-    }, 300);
+        animateNumber(dataSpan, 15200, '', true);
+    }, 200);
 
-    // 图表绘制 (所有图表数据均根据模拟调研真实反映运动社区特征)
-    // 周活跃趋势 (周一至周日)
-    const ctxLine = document.getElementById('weeklyActiveChart').getContext('2d');
-    new Chart(ctxLine, {
-        type: 'line',
-        data: {
-            labels: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
-            datasets: [{
-                label: '活跃用户指数 (相对值)',
-                data: [82, 96, 88, 97, 79, 63, 58],
-                borderColor: '#ff6b45',
-                backgroundColor: 'rgba(255, 107, 69, 0.05)',
-                borderWidth: 3,
-                pointBackgroundColor: '#ff8c5a',
-                pointBorderColor: '#fff',
-                pointRadius: 5,
-                pointHoverRadius: 8,
-                tension: 0.3,
-                fill: true,
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            plugins: { legend: { position: 'top', labels: { font: { size: 11 } } } }
-        }
-    });
-
-    // 年龄分布饼图
-    const ageCtx = document.getElementById('agePieChart').getContext('2d');
-    new Chart(ageCtx, {
-        type: 'pie',
-        data: {
-            labels: ['18-24岁 (35%)', '25-30岁 (32%)', '31-40岁 (21%)', '40岁以上 (12%)'],
-            datasets: [{
-                data: [35, 32, 21, 12],
-                backgroundColor: ['#FF9F5E', '#FF7A45', '#FFB37C', '#FFD1B3'],
-                borderWidth: 0,
-            }]
-        },
-        options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
-    });
-
-    // 运动偏好柱状图
-    const prefCtx = document.getElementById('prefBarChart').getContext('2d');
-    new Chart(prefCtx, {
+    // 分层转化对比图 (潜在付费转化率)
+    const ctxConv = document.getElementById('conversionChart').getContext('2d');
+    new Chart(ctxConv, {
         type: 'bar',
         data: {
-            labels: ['燃脂训练', '瑜伽/普拉提', '力量塑形', '跑步', '骑行'],
+            labels: ['分层前', '分层后'],
             datasets: [{
-                label: '偏好占比 (%)',
-                data: [78, 65, 59, 44, 31],
-                backgroundColor: '#FF8C5A',
-                borderRadius: 10,
-                barPercentage: 0.65,
+                label: '潜在付费用户转化率 (%)',
+                data: [15, 26],
+                backgroundColor: ['#FFB37C', '#FF5E3A'],
+                borderRadius: 12,
             }]
         },
-        options: {
-            responsive: true,
-            scales: { y: { beginAtZero: true, max: 90, grid: { color: '#f0e0d4' } } },
-            plugins: { tooltip: { callbacks: { label: (ctx) => `${ctx.raw}% 用户选择` } } }
-        }
+        options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'top' } } }
     });
 
-    // 可增加额外动效: 鼠标跟随光晕? 保持轻量
-    // 给卡片添加微动效
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', (e) => {
-            card.style.transition = 'transform 0.25s ease, box-shadow 0.3s';
-        });
+    // 周活跃趋势
+    const ctxWeek = document.getElementById('weeklyActiveChart').getContext('2d');
+    new Chart(ctxWeek, {
+        type: 'line',
+        data: {
+            labels: ['周一','周二','周三','周四','周五','周六','周日'],
+            datasets: [{ label: '活跃指数', data: [83,95,89,97,78,62,57], borderColor: '#ff6b45', backgroundColor: 'rgba(255,107,69,0.05)', fill: true, tension: 0.3, pointBackgroundColor: '#ff8c5a' }]
+        },
+        options: { responsive: true, maintainAspectRatio: true }
+    });
+
+    // 用户场景分布饼图
+    const sceneCtx = document.getElementById('scenePieChart').getContext('2d');
+    new Chart(sceneCtx, {
+        type: 'pie',
+        data: { labels: ['家庭居家(48%)', '户外跑步(27%)', '办公室/宿舍(15%)', '健身房(10%)'], datasets: [{ data: [48,27,15,10], backgroundColor: ['#FF9F5E','#FF7A45','#FFB37C','#FFD1B3'] }] },
+        options: { responsive: true }
+    });
+
+    // 生命周期策略映射 (柱状图示意留存提升)
+    const lifecycleCtx = document.getElementById('lifecycleChart').getContext('2d');
+    new Chart(lifecycleCtx, {
+        type: 'bar',
+        data: {
+            labels: ['新用户次日留存', '活跃免费留存', '高价值用户留存'],
+            datasets: [{ label: '留存率(%)', data: [42, 67, 82], backgroundColor: '#FF8C5A', borderRadius: 10 }]
+        },
+        options: { responsive: true, scales: { y: { max: 100 } } }
     });
 </script>
 </body>
